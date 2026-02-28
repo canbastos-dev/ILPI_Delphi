@@ -1,0 +1,47 @@
+unit uDataModule;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.VCLUI.Wait,
+  FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, Data.DB,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, FireDAC.Phys.PG, FireDAC.Phys.PGDef;
+
+type
+  TuDados = class(TDataModule)
+    con_ILPI: TFDConnection;
+    FDQuery1: TFDQuery;
+    FDPhysPgDriverLink1: TFDPhysPgDriverLink;
+    FDQuery2: TFDQuery;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure Conectar;
+  end;
+
+var
+  uDados: TuDados;
+
+implementation
+
+procedure TuDados.Conectar;
+  begin
+     con_ILPI.Params.Clear;
+     con_ILPI.Params.Add('DriverID=PG');
+     con_ILPI.Params.Add('Server=localhost');
+     con_ILPI.Params.Add('Port=5432');
+     con_ILPI.Params.Add('Database=ilpi');
+     con_ILPI.Params.Add('User_Name=postgres');
+     con_ILPI.Params.Add('Password=boss0700');
+     con_ILPI.Params.Add('CharacterSet=UTF8');
+     con_ILPI.Connected := True;
+   end;
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+end.

@@ -1,0 +1,35 @@
+object uDados: TuDados
+  Height = 488
+  Width = 630
+  object con_ILPI: TFDConnection
+    Params.Strings = (
+      'Server=localhost'
+      'Database=ilpi'
+      'User_Name=postgres'
+      'Password=boss0700'
+      'CharacterSet=UTF8'
+      'DriverID=PG')
+    Left = 48
+    Top = 24
+  end
+  object FDQuery1: TFDQuery
+    Connection = con_ILPI
+    SQL.Strings = (
+      'SELECT * FROM procedimento')
+    Left = 320
+    Top = 24
+  end
+  object FDPhysPgDriverLink1: TFDPhysPgDriverLink
+    VendorLib = 'C:\Users\Claudio\Documents\Development\Delphi\ILPI\libpq.dll'
+    Left = 152
+    Top = 24
+  end
+  object FDQuery2: TFDQuery
+    Connection = con_ILPI
+    SQL.Strings = (
+      'select * from mediamento'
+      'order by id ASC')
+    Left = 416
+    Top = 24
+  end
+end

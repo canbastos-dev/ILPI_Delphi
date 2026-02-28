@@ -1,0 +1,82 @@
+unit Main;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.WinXCtrls, Vcl.StdCtrls,
+  Vcl.ExtCtrls, IdosasView, Vcl.ComCtrls;
+
+type
+  TFrmMain = class(TForm)
+    pnlTop: TPanel;
+    btnMenu: TButton;
+    lblTitulo: TLabel;
+    SplitView: TSplitView;
+    btndashBoard: TButton;
+    btnIdosas: TButton;
+    btnFamiliares: TButton;
+    btnMedicamentos: TButton;
+    btnProcedimentos: TButton;
+    btnTratamento: TButton;
+    btnRelatorios: TButton;
+    btnSair: TButton;
+    pnlConteudo: TPanel;
+    _pgcPrincipal: TPageControl;
+    procedure btnMenuClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure btnSairClick(Sender: TObject);
+    procedure AbrirFormNoPanel(AForm: TForm);
+    procedure btnIdosasClick(Sender: TObject);
+    procedure AbrirAba(AFormClass: TFormClass; ATitulo: string);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmMain: TFrmMain;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrmMain.btnIdosasClick(Sender: TObject);
+begin
+  AbrirFormNoPanel(TfrmCadIdosas.Create(Self));
+  AbrirAba(TFrmCadIdosas, 'Cadastro de Idosas');
+end;
+
+procedure TFrmMain.btnMenuClick(Sender: TObject);
+begin
+    SplitView.Opened := not SplitView.Opened;
+end;
+
+procedure TFrmMain.btnSairClick(Sender: TObject);
+begin
+  close
+end;
+
+procedure TFrmMain.FormCreate(Sender: TObject);
+begin
+  Self.Color := $001E1E1E;
+  pnlTop.Color := $002D2D30;
+  SplitView.Color := $00252526;
+end;
+
+procedure TFrmMain.AbrirFormNoPanel(AForm: TForm);
+begin
+  // Remove o que estiver no painel
+  while pnlConteudo.ControlCount > 0 do
+    pnlConteudo.Controls[0].Free;
+   // Configura o novo form
+  AForm.Parent := pnlConteudo;
+  AForm.Align := alClient;
+  AForm.BorderStyle := bsNone;
+  AForm.Visible := True;
+end;
+
+
+end.

@@ -1,0 +1,16 @@
+program ILPI;
+
+uses
+  Vcl.Forms,
+  uILPI in 'uILPI.pas' {Form1},
+  uDataModule in 'uDataModule.pas' {uDados: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TuDados, uDados);
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

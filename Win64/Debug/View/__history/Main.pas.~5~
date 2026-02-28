@@ -1,0 +1,37 @@
+unit Main;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.WinXCtrls, Vcl.StdCtrls,
+  Vcl.ExtCtrls;
+
+type
+  TFrmMain = class(TForm)
+    pnlTop: TPanel;
+    btnMenu: TButton;
+    lblTitulo: TLabel;
+    SplitView: TSplitView;
+    btnIdosas: TButton;
+    btnFamiliares: TButton;
+    btnMedicamentos: TButton;
+    btnProcedimentos: TButton;
+    btnTratamentos: TButton;
+    btnRelatorios: TButton;
+    btnSair: TButton;
+    Button8: TButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmMain: TFrmMain;
+
+implementation
+
+{$R *.dfm}
+
+end.
