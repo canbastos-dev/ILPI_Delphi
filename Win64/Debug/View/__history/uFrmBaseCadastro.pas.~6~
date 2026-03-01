@@ -1,0 +1,38 @@
+unit uFrmBaseCadastro;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.ExtCtrls, Data.DB,
+  Vcl.StdCtrls, Vcl.Grids, Vcl.DBGrids, uDataModule;
+
+type
+  TFrmBaseCadastro = class(TForm)
+    pnlPrincipal: TPanel;
+    pgPrincipal: TPageControl;
+    tsListagem: TTabSheet;
+    tsCadastro: TTabSheet;
+    dbgDados: TDBGrid;
+    edtPesquisar: TEdit;
+    Button1: TButton;
+    DataSource1: TDataSource;
+    Label1: TLabel;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    Button5: TButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmBaseCadastro: TFrmBaseCadastro;
+
+implementation
+
+{$R *.dfm}
+
+end.

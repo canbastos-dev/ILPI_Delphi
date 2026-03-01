@@ -25,8 +25,6 @@ object FrmMain: TFrmMain
     Color = 1973790
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 390
-    ExplicitHeight = 363
   end
   object pnlTop: TPanel
     Left = 0
@@ -74,7 +72,6 @@ object FrmMain: TFrmMain
     OpenedWidth = 220
     Placement = svpLeft
     TabOrder = 1
-    ExplicitHeight = 378
     object btndashBoard: TButton
       Left = 0
       Top = 0

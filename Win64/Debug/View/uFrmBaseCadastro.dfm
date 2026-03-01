@@ -1,0 +1,128 @@
+object FrmBaseCadastro: TFrmBaseCadastro
+  Left = 0
+  Top = 0
+  Align = alClient
+  Caption = 'Cadastro Base'
+  ClientHeight = 338
+  ClientWidth = 593
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
+  object pnlPrincipal: TPanel
+    Left = 8
+    Top = 0
+    Width = 585
+    Height = 305
+    BevelOuter = bvNone
+    Caption = 'pnlPrincipal'
+    ParentBackground = False
+    TabOrder = 0
+    object pgPrincipal: TPageControl
+      Left = 0
+      Top = 0
+      Width = 585
+      Height = 305
+      Margins.Right = 16
+      Margins.Bottom = 16
+      ActivePage = tsListagem
+      Align = alClient
+      TabOrder = 0
+      object tsListagem: TTabSheet
+        Caption = 'Listagem'
+        object Label1: TLabel
+          Left = 0
+          Top = 0
+          Width = 34
+          Height = 15
+          Caption = 'Label1'
+        end
+        object dbgDados: TDBGrid
+          Left = 0
+          Top = 0
+          Width = 577
+          Height = 246
+          Color = 8454143
+          DataSource = dsDados
+          TabOrder = 0
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -12
+          TitleFont.Name = 'Segoe UI'
+          TitleFont.Style = []
+        end
+        object btnPesquisar: TButton
+          Left = 502
+          Top = 250
+          Width = 75
+          Height = 25
+          Caption = 'Pesquisar'
+          TabOrder = 1
+        end
+        object edtPesquisar: TEdit
+          Left = 3
+          Top = 252
+          Width = 497
+          Height = 23
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 2
+          TextHint = 'Digite informa'#231#227'o para pesquisar'
+        end
+      end
+      object tsCadastro: TTabSheet
+        AlignWithMargins = True
+        Caption = 'Cadastro'
+        ImageIndex = 1
+        object btnNovo: TButton
+          Left = 96
+          Top = 229
+          Width = 81
+          Height = 37
+          Caption = 'Inserir'
+          TabOrder = 0
+        end
+        object btnEditar: TButton
+          Left = 191
+          Top = 229
+          Width = 81
+          Height = 37
+          Caption = 'Alterar'
+          TabOrder = 1
+        end
+        object btnExcluir: TButton
+          Left = 368
+          Top = 229
+          Width = 81
+          Height = 37
+          Caption = 'Excluir'
+          TabOrder = 2
+        end
+        object btnCancelar: TButton
+          Left = 479
+          Top = 229
+          Width = 81
+          Height = 37
+          Caption = 'Cancelar'
+          TabOrder = 3
+        end
+        object btnSalvar: TButton
+          Left = 278
+          Top = 229
+          Width = 81
+          Height = 37
+          Caption = 'Salvar'
+          TabOrder = 4
+        end
+      end
+    end
+  end
+  object dsDados: TDataSource
+    DataSet = uDados.fdqDados
+    Left = 516
+    Top = 58
+  end
+end

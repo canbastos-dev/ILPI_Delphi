@@ -1,0 +1,18 @@
+program ILPI;
+
+uses
+  Vcl.Forms,
+  uDataModule in 'Win64\Debug\DAO\uDataModule.pas' {uDados: TDataModule},
+  Main in 'Win64\Debug\View\Main.pas' {FrmMain},
+  uFrmBaseCadastro in 'Win64\Debug\View\uFrmBaseCadastro.pas' {FrmBaseCadastro};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFrmMain, FrmMain);
+  Application.CreateForm(TFrmBaseCadastro, FrmBaseCadastro);
+  Application.CreateForm(TuDados, uDados);
+  Application.Run;
+end.

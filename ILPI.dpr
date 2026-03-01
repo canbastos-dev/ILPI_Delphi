@@ -2,10 +2,10 @@ program ILPI;
 
 uses
   Vcl.Forms,
-  uILPI in 'uILPI.pas' {Form1},
-  uDataModule in 'uDataModule.pas' {uDados: TDataModule},
+  uDataModule in 'Win64\Debug\DAO\uDataModule.pas' {uDados: TDataModule},
   Main in 'Win64\Debug\View\Main.pas' {FrmMain},
-  IdosasView in 'Win64\Debug\View\IdosasView.pas' {frmCadIdosas};
+  uFrmBaseCadastro in 'Win64\Debug\View\uFrmBaseCadastro.pas' {FrmBaseCadastro},
+  uFrmCadastroIdosas in 'Win64\Debug\View\uFrmCadastroIdosas.pas' {FormCadastroIdosas};
 
 {$R *.res}
 
@@ -13,8 +13,8 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TFrmMain, FrmMain);
+  Application.CreateForm(TFrmBaseCadastro, FrmBaseCadastro);
   Application.CreateForm(TuDados, uDados);
-  Application.CreateForm(TForm1, Form1);
-  // Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TFormCadastroIdosas, FormCadastroIdosas);
   Application.Run;
 end.

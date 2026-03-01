@@ -125,11 +125,7 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="uILPI.pas">
-            <Form>Form1</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="uDataModule.pas">
+        <DCCReference Include="Win64\Debug\DAO\uDataModule.pas">
             <Form>uDados</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
@@ -138,8 +134,11 @@
             <Form>FrmMain</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="Win64\Debug\View\IdosasView.pas">
-            <Form>frmCadIdosas</Form>
+        <DCCReference Include="Win64\Debug\View\uFrmBaseCadastro.pas">
+            <Form>FrmBaseCadastro</Form>
+        </DCCReference>
+        <DCCReference Include="Win64\Debug\View\uFrmCadastroIdosas.pas">
+            <Form>FormCadastroIdosas</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">
