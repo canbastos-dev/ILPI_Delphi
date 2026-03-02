@@ -1,0 +1,16 @@
+unit uCadastroIdosasController;
+
+interface
+
+uses
+  uFrmCadastroIdosas, uDataModule, System.SysUtils;
+
+type
+  TCadastroIdosasController = class
+  public
+    class procedure AbrirCadastroClientes;
+  end;
+
+implementation
+
+end.

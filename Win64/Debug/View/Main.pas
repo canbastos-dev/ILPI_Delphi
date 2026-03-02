@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.WinXCtrls, Vcl.StdCtrls,
-  Vcl.ExtCtrls, Vcl.ComCtrls;
+  Vcl.ExtCtrls, Vcl.ComCtrls, uCadastroIdosasController;
 
 type
   TFrmMain = class(TForm)
@@ -27,7 +27,6 @@ type
     procedure btnSairClick(Sender: TObject);
     procedure AbrirFormNoPanel(AForm: TForm);
     procedure btnIdosasClick(Sender: TObject);
-//    procedure AbrirAba(AFormClass: TFormClass; ATitulo: string);
 
   private
     { Private declarations }
@@ -44,8 +43,8 @@ implementation
 
 procedure TFrmMain.btnIdosasClick(Sender: TObject);
 begin
-//  AbrirFormNoPanel(TfrmCadIdosas.Create(Self));
-//  AbrirAba(TFrmCadIdosas, 'Cadastro de Idosas');
+//  AbrirFormNoPanel(TFormCadastroIdosas.Create(Self));
+  TCadastroIdosasController.AbrirCadastroClientes(pnlConteudo);
 end;
 
 procedure TFrmMain.btnMenuClick(Sender: TObject);

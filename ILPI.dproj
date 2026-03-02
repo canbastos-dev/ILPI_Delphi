@@ -139,8 +139,8 @@
         </DCCReference>
         <DCCReference Include="Win64\Debug\View\uFrmCadastroIdosas.pas">
             <Form>FormCadastroIdosas</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Win64\Debug\Controller\uCadastroIdosasController.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

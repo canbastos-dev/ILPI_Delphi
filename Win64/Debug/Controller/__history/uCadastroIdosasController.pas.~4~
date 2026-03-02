@@ -1,0 +1,36 @@
+unit uCadastroIdosasController;
+
+interface
+
+uses
+  uFrmCadastroIdosas, uDataModule, System.SysUtils;
+
+type
+  TCadastroIdosasController = class
+  public
+    class procedure AbrirCadastroClientes;
+  end;
+
+implementation
+
+class procedure TCadastroIdosasController.AbrirCadastroClientes;
+var
+  Frm: TFormCadastroIdosas;
+begin
+  // Garante conexão
+  if not uDados.con_ILPI.Connected then
+     uDados.Conectar;
+
+  // Configura Query
+  uDados.fdqDados.Close;
+  uDados.fdqDados.Open();
+
+  // Cria formulário
+  Frm.Create(nil);
+//  Frm := TFrmCadastroIdosas.Create(nil);
+  Frm.SetDataSet(uDados.fdqDados);
+
+  Frm.Show; // ou ShowModal
+end;
+
+end.

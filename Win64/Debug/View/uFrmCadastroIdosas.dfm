@@ -1,6 +1,7 @@
 inherited FormCadastroIdosas: TFormCadastroIdosas
   Caption = 'Cadastro de Idosas'
   StyleElements = [seFont, seClient, seBorder]
+  OnCreate = FormCreate
   TextHeight = 15
   inherited pnlPrincipal: TPanel
     StyleElements = [seFont, seClient, seBorder]
@@ -13,6 +14,119 @@ inherited FormCadastroIdosas: TFormCadastroIdosas
           StyleElements = [seFont, seClient, seBorder]
         end
       end
+      inherited tsCadastro: TTabSheet
+        object lbNome: TLabel [0]
+          Left = 8
+          Top = 3
+          Width = 33
+          Height = 15
+          Caption = 'Nome'
+        end
+        object lbCPF: TLabel [1]
+          Left = 8
+          Top = 64
+          Width = 21
+          Height = 15
+          Caption = 'CPF'
+        end
+        object lbRG: TLabel [2]
+          Left = 151
+          Top = 64
+          Width = 15
+          Height = 15
+          Caption = 'RG'
+        end
+        object lbDataNascimento: TLabel [3]
+          Left = 281
+          Top = 32
+          Width = 91
+          Height = 15
+          Caption = 'Data Nascimento'
+        end
+        object lbSexo: TLabel [4]
+          Left = 455
+          Top = 3
+          Width = 25
+          Height = 15
+          Caption = 'Sexo'
+        end
+        object lbApelido: TLabel [5]
+          Left = 8
+          Top = 32
+          Width = 41
+          Height = 15
+          Caption = 'Apelido'
+        end
+        object lbEstadoCivil: TLabel [6]
+          Left = 395
+          Top = 61
+          Width = 61
+          Height = 15
+          Caption = 'Estado Civil'
+        end
+        inherited btnNovo: TButton
+          Left = 56
+          ExplicitLeft = 56
+        end
+        inherited btnEditar: TButton
+          Left = 167
+          ExplicitLeft = 167
+        end
+        inherited btnCancelar: TButton
+          Left = 471
+          ExplicitLeft = 471
+        end
+        inherited btnSalvar: TButton
+          Left = 270
+          ExplicitLeft = 270
+        end
+        object dbeNome: TDBEdit
+          Left = 56
+          Top = 3
+          Width = 393
+          Height = 23
+          TabOrder = 5
+        end
+        object dbeApelidp: TDBEdit
+          Left = 55
+          Top = 32
+          Width = 210
+          Height = 23
+          TabOrder = 6
+        end
+        object dbeRG: TDBEdit
+          Left = 172
+          Top = 61
+          Width = 210
+          Height = 23
+          TabOrder = 7
+        end
+        object mkeDataNasc: TMaskEdit
+          Left = 378
+          Top = 32
+          Width = 78
+          Height = 23
+          EditMask = #39'99/99/9999;1;_'#39
+          MaxLength = 13
+          TabOrder = 8
+          Text = #39'  /  /    ;'#39
+        end
+        object mkeCPF: TMaskEdit
+          Left = 58
+          Top = 61
+          Width = 87
+          Height = 23
+          EditMask = #39'999\.999\.999\-99;1;_'#39';'
+          MaxLength = 18
+          TabOrder = 9
+          Text = #39'   .   .   -  ;1'#39
+        end
+      end
     end
+  end
+  inherited dsDados: TDataSource
+    DataSet = nil
+    Left = 24
+    Top = 290
   end
 end
